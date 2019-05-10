@@ -16,7 +16,6 @@ namespace UnityEditor.Experimental.Rendering.LWRP
         public const string MaskSlotName =  "Mask";
         public const string NormalSlotName = "Normal";
 
-
         public const int PositionSlotId = 9;
         public const int ColorSlotId = 0;
         public const int MaskSlotId = 1;
@@ -36,7 +35,7 @@ namespace UnityEditor.Experimental.Rendering.LWRP
             AddSlot(new PositionMaterialSlot(PositionSlotId, PositionName, PositionName, CoordinateSpace.Object, ShaderStageCapability.Vertex));
             AddSlot(new ColorRGBAMaterialSlot(ColorSlotId, ColorSlotName, ColorSlotName, SlotType.Input, Color.white, ShaderStageCapability.Fragment));
             AddSlot(new ColorRGBAMaterialSlot(MaskSlotId, MaskSlotName, MaskSlotName, SlotType.Input, Color.white, ShaderStageCapability.Fragment));
-            AddSlot(new NormalMaterialSlot(NormalSlotId, NormalSlotName, NormalSlotName, CoordinateSpace.Tangent, ShaderStageCapability.Fragment));
+            AddSlot(new Vector3MaterialSlot(NormalSlotId, NormalSlotName, NormalSlotName, SlotType.Input, new Vector3(0.0f, 0.0f, 1.0f), ShaderStageCapability.Fragment));
 
             RemoveSlotsNameNotMatching(
                 new[]
